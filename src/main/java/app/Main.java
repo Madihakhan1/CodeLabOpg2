@@ -2,6 +2,7 @@ package app;
 
 
 import app.config.HibernateConfig;
+import app.entities.Course;
 import app.entities.Person;
 import app.entities.PersonDAO;
 import app.entities.Student;
@@ -11,6 +12,7 @@ import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Locale;
 
@@ -39,6 +41,16 @@ public class Main {
                 .dateOfEnrollment(LocalDate.of(2024,6,20))
                 .build();
         personDAO.create(student);
+
+
+        Course course = Course.builder()
+                .name("Datamatiker")
+                .teacher("Jon")
+                .semester(3)
+                .classRoom("D5")
+                .time(LocalTime.of(3,5))
+                .build();
+        personDAO.create(course);
 
 
 
