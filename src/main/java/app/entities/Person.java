@@ -5,13 +5,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
+
+import java.time.LocalDate;
+import java.util.Date;
 
 @Getter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Entity
+@SuperBuilder
 
 public class Person {
 
@@ -21,10 +25,12 @@ public class Person {
     private String name;
     private int age;
 
-    public Person (int age, String name){
-        this.age = age;
+    public Person(String name, int age){
         this.name = name;
-
+        this.age = age;
     }
+
+
+
 
 }
