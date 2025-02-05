@@ -43,7 +43,7 @@ public class Main {
         studentDAO.create(student);
 
         Course course = Course.builder()
-                .name("Datamatiker")
+                .course("Datamatiker")
                 .teacher("Jon")
                 .semester(3)
                 .classRoom("D5")
